@@ -20,9 +20,8 @@ public class BaseActivity extends AppCompatActivity {
     public ProgressDialog progressDialog;
     protected static final String TAG = InitApp.TAG;
 
-    private FirebaseAuth auth;
-    private DatabaseReference dbRef;
-    private FirebaseAuth.AuthStateListener mAuthListener;
+    protected FirebaseAuth auth;
+    protected DatabaseReference dbRef;
 
 
     public void showProgressDialog(String message) {
@@ -49,28 +48,13 @@ public class BaseActivity extends AppCompatActivity {
 
         auth = FirebaseAuth.getInstance();
         dbRef = FirebaseDatabase.getInstance().getReference();
-        mAuthListener = new FirebaseAuth.AuthStateListener() {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                FirebaseUser user = firebaseAuth.getCurrentUser();
-                if (user != null) {
-                    // User is signed in
-                    Log.d(TAG, getLocalClassName()+ ": "+"AuthState: signed_in:" + user.getUid());
-                } else {
-                    // User is signed out
-                    Log.d(TAG, getLocalClassName()+ ": "+"AuthState: signed_out");
-                }
-                // ...
-            }
-        };
+
     }
 
     @Override
     protected void onStart() {
         super.onStart();
         Log.i(TAG, this.getClass().getSimpleName() + ": onStart");
-
-        auth.addAuthStateListener(mAuthListener);
     }
 
     @Override
@@ -92,9 +76,7 @@ public class BaseActivity extends AppCompatActivity {
         Log.i(TAG, this.getClass().getSimpleName() + ": onStop");
 //
         hideProgressDialog();
-        if (mAuthListener != null) {
-            auth.removeAuthStateListener(mAuthListener);
-        }
+
     }
 
     @Override
