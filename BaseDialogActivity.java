@@ -1,26 +1,25 @@
+
+
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 /**
- * Created by cellbody on 2016/9/23.
+ * Created by cellbody on 2016/9/26.
  */
 
-public class BaseActivity extends AppCompatActivity {
+public class BaseDialogActivity extends Activity {
     public ProgressDialog progressDialog;
     protected static final String TAG = InitApp.TAG;
 
     protected FirebaseAuth auth;
     protected DatabaseReference dbRef;
-
 
     public void showProgressDialog(String message) {
         if (progressDialog == null) {
@@ -82,5 +81,6 @@ public class BaseActivity extends AppCompatActivity {
         super.onDestroy();
         Log.i(TAG, this.getClass().getSimpleName() + ": onDestroy");
     }
+
 
 }
