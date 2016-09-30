@@ -1,5 +1,7 @@
 FirebaseShortCut
 =====
+基本
+----
 三個版本號必須相同:
 ```gradle
 compile 'com.google.firebase:firebase-auth:9.6.1'
@@ -46,4 +48,18 @@ dbRef.child("image").limitToLast(1).addListenerForSingleValueEvent(new ValueEven
       Log.e(TAG, "PostActivity: onCancelled: " + databaseError.getDetails());
     }
 });
-        
+```
+FirebaseRecyclerAdapter
+------
+宣告:
+```java
+RecyclerView recyclerView;
+```
+onCreate:
+```java
+recyclerView = (RecyclerView) findViewById(R.id.list_view);
+recyclerView.setHasFixedSize(true);
+recyclerView.setLayoutManager(new LinearLayoutManager(this));
+```
+
+
