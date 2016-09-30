@@ -1,5 +1,12 @@
 FirebaseShortCut
 =====
+三個版本號必須相同:
+```gradle
+compile 'com.google.firebase:firebase-auth:9.6.1'
+compile 'com.google.firebase:firebase-database:9.6.1'
+compile 'com.google.android.gms:play-services-auth:9.6.1'
+```
+
 宣告:
 ```java
 FirebaseAuth auth;
