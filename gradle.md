@@ -16,6 +16,8 @@ compile 'com.jakewharton:butterknife:8.4.0'
 apt 'com.jakewharton:butterknife-compiler:8.4.0'
 //    Percent Layout
 compile 'com.android.support:percent:24.2.1'
+//    CircleImageView
+compile 'de.hdodenhof:circleimageview:2.1.0'
 ```
 bottom apply plugin:
 ```
