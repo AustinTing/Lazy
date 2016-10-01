@@ -54,12 +54,47 @@ FirebaseRecyclerAdapter
 宣告:
 ```java
 RecyclerView recyclerView;
+LinearLayoutManager linearLayoutManager;
+
 ```
 onCreate:
 ```java
-recyclerView = (RecyclerView) findViewById(R.id.list_view);
+linearLayoutManager = new LinearLayoutManager(this);
+// 讓列表資料反轉 THIS ALSO SETS setStackFromBottom to true
+linearLayoutManager.setReverseLayout(true);
+linearLayoutManager.setStackFromEnd(true);
 recyclerView.setHasFixedSize(true);
-recyclerView.setLayoutManager(new LinearLayoutManager(this));
+recyclerView.setLayoutManager(linearLayoutManager);
+```
+
+內部類別:
+```java
+public static class ItemViewHolder extends RecyclerView.ViewHolder {
+
+        public final static int layoutResId = R.layout.ac_main_item;
+        CircleImageView userImage;
+
+        public ItemViewHolder(View view) {
+            super(view);
+            userImage = (CircleImageView) view.findViewById(R.id.userImage);
+        }
+    }
+```
+onStart:
+```java
+FirebaseRecyclerAdapter<Event, ItemViewHolder> adapter =
+                new FirebaseRecyclerAdapter<Event, ItemViewHolder>(
+                        Event.class,
+                        ItemViewHolder.layoutResId,
+                        ItemViewHolder.class,
+                        dbRef.child("post")
+                        ) {
+            @Override
+            protected void populateViewHolder(ItemViewHolder viewHolder, Event event, int position) {
+                ImageLoader.getInstance().displayImage(event.getUserImgUrl(), viewHolder.userImage);
+            }
+        };
+recyclerView.setAdapter(adapter);
 ```
 
 
