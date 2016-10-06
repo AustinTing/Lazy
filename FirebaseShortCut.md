@@ -92,6 +92,8 @@ FirebaseRecyclerAdapter<Event, ItemViewHolder> adapter =
             @Override
             protected void populateViewHolder(ItemViewHolder viewHolder, Event event, int position) {
                 ImageLoader.getInstance().displayImage(event.getUserImgUrl(), viewHolder.userImage);
+                //  取得這個item的key
+                getRef(i).getKey()
             }
         };
 recyclerView.setAdapter(adapter);
