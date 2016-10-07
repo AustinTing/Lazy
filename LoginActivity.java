@@ -24,9 +24,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
-/**
- * Created by cellbody on 2016/9/23.
- */
 
 public class LoginActivity extends BaseActivity {
     private GoogleApiClient googleApiClient;
