@@ -1,9 +1,5 @@
 
 
-/**
- * Created by cellbody on 2016/9/30.
- */
-
 public class FastClickSensor {
     private static long lastClickTime;
     public static boolean isFastDoubleClick() {
