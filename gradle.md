@@ -23,4 +23,8 @@ bottom apply plugin:
 ```
 apply plugin: 'com.google.gms.google-services'
 ```
-
+project gradle:
+```
+classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+classpath 'com.google.gms:google-services:3.0.0'
+```
