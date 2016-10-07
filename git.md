@@ -44,5 +44,8 @@ cd 20percent
 ```
 git clone 貼上連結
 ```
-- 用AS開專案，要google-service
+- 用AS開專案，要google-service，存放至
+```
+專案\app\
+```
 
