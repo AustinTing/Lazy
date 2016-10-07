@@ -16,7 +16,7 @@ public class InitApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        Log.i(TAG, this.getClass().getSimpleName()+": ImageLoader Init");
+        Log.i(TAG, this.getClass().getSimpleName() + ": onCreate");
 
     }
 }
