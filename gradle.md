@@ -18,6 +18,10 @@ apt 'com.jakewharton:butterknife-compiler:8.4.0'
 compile 'com.android.support:percent:24.2.1'
 //    CircleImageView
 compile 'de.hdodenhof:circleimageview:2.1.0'
+//    FirebaseRecyclerView
+    compile 'com.firebaseui:firebase-ui:0.5.3'
+//    Glide
+    compile 'com.github.bumptech.glide:glide:3.7.0'
 ```
 bottom apply plugin:
 ```
