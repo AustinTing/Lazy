@@ -10,10 +10,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-/**
- * Created by cellbody on 2016/9/26.
- */
-
 public class BaseDialogActivity extends Activity {
     public ProgressDialog progressDialog;
     protected static final String TAG = InitApp.TAG;
