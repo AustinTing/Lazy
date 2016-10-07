@@ -33,7 +33,7 @@
         android:layout_below="@id/imgBlock3"
         android:background="#222222"
         android:padding="20dp"
-        android:text="超有事旁白"
+        android:text="改名稱"
         android:textAlignment="center"
         android:textColor="#FEFEFE"
         android:textSize="60sp"
