@@ -33,7 +33,8 @@ String uid = auth.getCurrentUser().getUid();
 dbRef.child("post").child(key).setValue(post);
 dbRef.child("user-post").child(uid).child(key).setValue(post);
 ```
-一次性下載資料:
+一次性下載資料:    
+- .setValue(dataSnapshot.*getValue()*)
 ```java
 dbRef.child("image").limitToLast(1).addListenerForSingleValueEvent(new ValueEventListener() {
     @Override
@@ -49,6 +50,7 @@ dbRef.child("image").limitToLast(1).addListenerForSingleValueEvent(new ValueEven
     }
 });
 ```
+
 FirebaseRecyclerAdapter
 ------
 宣告:
