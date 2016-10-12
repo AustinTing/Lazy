@@ -34,7 +34,7 @@ dbRef.child("post").child(key).setValue(post);
 dbRef.child("user-post").child(uid).child(key).setValue(post);
 ```
 一次性下載資料:    
-- .setValue(dataSnapshot.*getValue()*)
+- 記得要dataSnapshot.*getValue()*
 ```java
 dbRef.child("image").limitToLast(1).addListenerForSingleValueEvent(new ValueEventListener() {
     @Override
