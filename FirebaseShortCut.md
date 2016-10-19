@@ -50,7 +50,23 @@ dbRef.child("image").limitToLast(1).addListenerForSingleValueEvent(new ValueEven
     }
 });
 ```
+使用`startAt()`、`endAt`和`equalTo`時，要注意前面要有filter
+```java
+//  orderByKey()
+dbRef.child("post").orderByKey().equalTo(key).addValueEventListener(new ValueEventListener() {
+    @Override
+    public void onDataChange(DataSnapshot dataSnapshot) {
+        //  就算只有一筆也，也要這樣處理
+        for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+            Post post = postSnapshot.getValue(Post.class);
+        }
+    }
+    @Override
+    public void onCancelled(DatabaseError databaseError) {
 
+    }
+});
+```
 FirebaseRecyclerAdapter
 ------
 宣告:
